@@ -3,61 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TimeSwipe Onboarding</title>
+  <title>TimeSwipe Parent Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #121212;
-      color: #f4f4f4;
+      background: #f5f7fa;
+      color: #333;
       text-align: center;
-      padding: 40px;
+      padding: 50px;
     }
     h1 {
-      font-size: 2.5rem;
-      color: gold;
+      color: #222;
+      font-size: 2em;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 1.2rem;
-      margin: 20px 0;
+      font-size: 1.2em;
+      margin-top: 5px;
     }
-    a.button {
-      background: gold;
-      color: #121212;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
+    .status-box {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    .coming-soon {
+      color: #e67e22;
       font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .qr-container {
-      margin: 30px 0;
-    }
-    .qr-container img {
-      width: 200px;
-      height: 200px;
-    }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #999;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to TimeSwipe™</h1>
-  <p>This page helps you set up your TimeSwipe device and access your parental dashboard.</p>
-
-  <div class="qr-container">
-    <p><strong>Scan this QR code from your device:</strong></p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://timeswipe.github.io/timeswipe/" alt="QR Code to TimeSwipe Onboarding">
-
-
-  <p>Or click below to continue:</p>
-  <a class="button" href="https://timeswipe.github.io">Launch Dashboard</a>
-
-  <footer>
-    &copy; 2025 TimeSwipe™ | All rights reserved
-  </footer>
+  <h1>TimeSwipe Parent Dashboard</h1>
+  <div class="status-box">
+    <p class="coming-soon">✅ Dashboard is live.</p>
+    <p>We're working hard to bring full functionality soon!</p>
+    <p>Please check back for weekly token resets, override options, and special challenge controls.</p>
+  </div>
 </body>
 </html>
