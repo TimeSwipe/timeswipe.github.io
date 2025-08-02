@@ -2,63 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TimeSwipe Parent Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 0;
+      font-family: sans-serif;
+      background-color: #f3f4f6;
       text-align: center;
+      padding: 2rem;
     }
-
-    h1 {
-      font-size: 2em;
-      margin-top: 60px;
-      color: #222;
-    }
-
     .card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 30px 20px;
-      margin: 40px auto;
-      max-width: 400px;
-      text-align: center;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      padding: 2rem;
+      margin-top: 2rem;
+      max-width: 500px;
     }
-
-    .card h2 {
-      color: #333;
-      font-size: 1.25em;
+    .card h1 {
+      color: #111827;
     }
-
-    .card p {
-      color: #444;
-      font-size: 1em;
-      margin-top: 10px;
-    }
-
-    .badge {
-      font-weight: bold;
+    .live {
       color: #f97316;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
-
-    .check {
-      color: green;
-      font-size: 1.2em;
-      vertical-align: middle;
-      margin-right: 6px;
+    .icon {
+      font-size: 1.5rem;
+      color: #10b981;
     }
   </style>
 </head>
 <body>
   <h1>TimeSwipe Parent Dashboard</h1>
   <div class="card">
-    <h2><span class="check">✅</span><span class="badge">Dashboard is live.</span></h2>
+    <div class="icon">✅</div>
+    <p class="live">Dashboard is live.</p>
     <p>We're working hard to bring full functionality soon!</p>
-    <p>Please check back for weekly token resets, override options, and special challenge controls.</p>
+    <p>Please check back for:</p>
+    <ul style="text-align: left; margin: 1rem auto; max-width: 300px;">
+      <li>✔️ Weekly token resets</li>
+      <li>✔️ Override controls</li>
+      <li>✔️ Special challenge options</li>
+    </ul>
   </div>
 </body>
 </html>
