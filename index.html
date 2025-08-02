@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TimeSwipe Parent Dashboard</title>
+  <title>TimeSwipe™ Parent Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      background-color: #000;
+      color: #fff;
+      font-family: sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 30px;
     }
     h1 {
-      color: #222;
-      font-size: 2em;
-      margin-bottom: 10px;
+      color: gold;
+      font-size: 2rem;
     }
-    p {
-      font-size: 1.2em;
-      margin-top: 5px;
-    }
-    .status-box {
-      background: #fff;
+    .card {
+      background: #111;
+      border: 1px solid #333;
       padding: 20px;
       margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
       max-width: 400px;
+      border-radius: 15px;
     }
-    .coming-soon {
-      color: #e67e22;
+    .label {
       font-weight: bold;
+      color: #ccc;
+    }
+    .value {
+      font-size: 1.5rem;
+      color: gold;
     }
   </style>
 </head>
 <body>
-  <h1>TimeSwipe Parent Dashboard</h1>
-  <div class="status-box">
-    <p class="coming-soon">✅ Dashboard is live.</p>
-    <p>We're working hard to bring full functionality soon!</p>
-    <p>Please check back for weekly token resets, override options, and special challenge controls.</p>
+  <h1>TimeSwipe™ Dashboard</h1>
+
+  <div class="card">
+    <div class="label">Tokens Left:</div>
+    <div class="value">3</div>
   </div>
+
+  <div class="card">
+    <div class="label">Special Challenges:</div>
+    <div class="value">✅ Clean Room<br>❌ Brush Teeth<br>✅ Homework</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Tamper Mode:</div>
+    <div class="value">OFF</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Golden TT Swipes:</div>
+    <div class="value">1 of 1 used</div>
+  </div>
+
+  <footer style="margin-top:40px; color:#888;">&copy; 2025 TimeSwipe™</footer>
 </body>
 </html>
