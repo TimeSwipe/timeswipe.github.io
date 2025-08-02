@@ -3,61 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TimeSwipe™ Parent Dashboard</title>
+  <title>TimeSwipe Parent Dashboard</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 30px;
     }
+
     h1 {
-      color: gold;
-      font-size: 2rem;
+      font-size: 2em;
+      margin-top: 60px;
+      color: #222;
     }
+
     .card {
-      background: #111;
-      border: 1px solid #333;
-      padding: 20px;
-      margin: 20px auto;
-      width: 90%;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px 20px;
+      margin: 40px auto;
       max-width: 400px;
-      border-radius: 15px;
+      text-align: center;
     }
-    .label {
+
+    .card h2 {
+      color: #333;
+      font-size: 1.25em;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .badge {
       font-weight: bold;
-      color: #ccc;
+      color: #f97316;
     }
-    .value {
-      font-size: 1.5rem;
-      color: gold;
+
+    .check {
+      color: green;
+      font-size: 1.2em;
+      vertical-align: middle;
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
-  <h1>TimeSwipe™ Dashboard</h1>
-
+  <h1>TimeSwipe Parent Dashboard</h1>
   <div class="card">
-    <div class="label">Tokens Left:</div>
-    <div class="value">3</div>
+    <h2><span class="check">✅</span><span class="badge">Dashboard is live.</span></h2>
+    <p>We're working hard to bring full functionality soon!</p>
+    <p>Please check back for weekly token resets, override options, and special challenge controls.</p>
   </div>
-
-  <div class="card">
-    <div class="label">Special Challenges:</div>
-    <div class="value">✅ Clean Room<br>❌ Brush Teeth<br>✅ Homework</div>
-  </div>
-
-  <div class="card">
-    <div class="label">Tamper Mode:</div>
-    <div class="value">OFF</div>
-  </div>
-
-  <div class="card">
-    <div class="label">Golden TT Swipes:</div>
-    <div class="value">1 of 1 used</div>
-  </div>
-
-  <footer style="margin-top:40px; color:#888;">&copy; 2025 TimeSwipe™</footer>
 </body>
 </html>
