@@ -7,116 +7,107 @@
   <title>TimeSwipe Parent Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f6fc;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6fa;
       margin: 0;
       padding: 0;
       text-align: center;
     }
-
-    h1 {
-      margin-top: 60px;
-      font-size: 32px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
+    .container {
       max-width: 500px;
-      margin: 40px auto;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 80px auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 16px;
     }
-
-    .status {
-      font-size: 20px;
-      color: #333;
-      margin-top: 10px;
-    }
-
-    .status span {
-      color: orange;
+    .title {
+      font-size: 28px;
       font-weight: bold;
+      color: #2f3640;
+      margin-bottom: 10px;
     }
-
+    .subtitle {
+      font-size: 18px;
+      color: #27ae60;
+      margin: 10px 0 30px;
+    }
     ul {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 20px;
       text-align: left;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #444;
     }
-
-    ul li::before {
-      content: "✔️";
-      margin-right: 10px;
-      color: #7e57c2;
-    }
-
-    .buttons {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .buttons button {
-      background-color: #7e57c2;
-      color: white;
-      border: none;
-      padding: 10px 16px;
+    button {
+      margin: 10px 8px;
+      padding: 12px 20px;
       font-size: 14px;
-      border-radius: 6px;
+      font-weight: 600;
+      background-color: #5a67d8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .buttons button:hover {
-      background-color: #5e35b1;
+    button:hover {
+      background-color: #434190;
     }
-
-    .output {
-      margin-top: 20px;
-      color: #444;
-      font-weight: bold;
+    .status {
+      margin-top: 12px;
       font-size: 14px;
+      font-weight: 500;
+      color: #2f3640;
+    }
+    .success {
+      color: #2ecc71;
+    }
+    .error {
+      color: #e74c3c;
     }
   </style>
 </head>
 <body>
-
-  <h1>TimeSwipe Parent Dashboard</h1>
-
-  <div class="card">
-    <div style="font-size: 32px;">✅</div>
-    <div class="status"><span>Dashboard is live.</span></div>
-    <p>We're working hard to bring full functionality soon!</p>
-
-    <p>Please check back for:</p>
+  <div class="container">
+    <div class="title">TimeSwipe Parent Dashboard</div>
+    <div class="subtitle">✅ Dashboard is live.</div>
+    <p>We're working hard to bring full functionality soon!<br/>
+    Please check back for:</p>
     <ul>
-      <li>Weekly token resets</li>
-      <li>Override controls</li>
-      <li>Special challenge options</li>
+      <li>✔ Weekly token resets</li>
+      <li>✔ Override controls</li>
+      <li>✔ Special challenge options</li>
     </ul>
 
-    <div class="buttons">
-      <button onclick="handleClick('Tokens have been reset.')">Reset Tokens</button>
-      <button onclick="handleClick('Override activated.')">Override</button>
-      <button onclick="handleClick('Challenge awarded!')">Award Challenge</button>
-    </div>
+    <button onclick="triggerAction('reset')">Reset Tokens</button>
+    <button onclick="triggerAction('override')">Override</button>
+    <button onclick="triggerAction('challenge')">Award Challenge</button>
 
-    <div class="output" id="outputMessage"></div>
+    <div id="status" class="status"></div>
   </div>
 
   <script>
-    function handleClick(message) {
-      const output = document.getElementById('outputMessage');
-      output.textContent = message;
-      setTimeout(() => {
-        output.textContent = '';
-      }, 2500);
+    function triggerAction(action) {
+      const statusBox = document.getElementById('status');
+      statusBox.textContent = 'Processing...';
+      statusBox.className = 'status';
+
+      fetch(`http://localhost:5000/${action}`, {
+        method: 'POST'
+      })
+      .then(res => {
+        if (res.ok) {
+          statusBox.textContent = `✅ ${action.charAt(0).toUpperCase() + action.slice(1)} completed!`;
+          statusBox.className = 'status success';
+        } else {
+          throw new Error('Failed');
+        }
+      })
+      .catch(() => {
+        statusBox.textContent = `❌ ${action} failed. Please check connection.`;
+        statusBox.className = 'status error';
+      });
     }
   </script>
-
 </body>
 </html>
