@@ -8,94 +8,115 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
+      background-color: #f3f6fc;
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      text-align: center;
     }
 
-    .container {
-      text-align: center;
+    h1 {
+      margin-top: 60px;
+      font-size: 32px;
     }
 
     .card {
       background-color: white;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 400px;
-      margin: auto;
+      max-width: 500px;
+      margin: 40px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    .check {
-      font-size: 32px;
-      color: green;
-    }
-
-    .title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .message {
-      font-size: 16px;
+    .status {
+      font-size: 20px;
+      color: #333;
       margin-top: 10px;
-      margin-bottom: 20px;
+    }
+
+    .status span {
+      color: orange;
+      font-weight: bold;
     }
 
     ul {
       list-style-type: none;
       padding: 0;
-      margin: 10px 0;
+      margin-top: 20px;
+      text-align: left;
     }
 
     ul li::before {
-      content: "✔️ ";
-      margin-right: 8px;
-      color: purple;
+      content: "✔️";
+      margin-right: 10px;
+      color: #7e57c2;
     }
 
-    .btn {
-      margin: 10px 5px;
-      padding: 10px 16px;
-      font-size: 14px;
-      background-color: #5c67f2;
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .buttons button {
+      background-color: #7e57c2;
       color: white;
       border: none;
+      padding: 10px 16px;
+      font-size: 14px;
       border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    .btn:hover {
-      background-color: #4752d5;
+    .buttons button:hover {
+      background-color: #5e35b1;
+    }
+
+    .output {
+      margin-top: 20px;
+      color: #444;
+      font-weight: bold;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>TimeSwipe Parent Dashboard</h1>
-    <div class="card">
-      <div class="check">✅</div>
-      <div class="title">Dashboard is live.</div>
-      <div class="message">
-        We're working hard to bring full functionality soon!
-        <br /><br />
-        Please check back for:
-      </div>
-      <ul>
-        <li>Weekly token resets</li>
-        <li>Override controls</li>
-        <li>Special challenge options</li>
-      </ul>
-      <button class="btn" onclick="alert('Weekly tokens reset!')">Reset Tokens</button>
-      <button class="btn" onclick="alert('Override activated!')">Override</button>
-      <button class="btn" onclick="alert('Special challenge awarded!')">Award Challenge</button>
+
+  <h1>TimeSwipe Parent Dashboard</h1>
+
+  <div class="card">
+    <div style="font-size: 32px;">✅</div>
+    <div class="status"><span>Dashboard is live.</span></div>
+    <p>We're working hard to bring full functionality soon!</p>
+
+    <p>Please check back for:</p>
+    <ul>
+      <li>Weekly token resets</li>
+      <li>Override controls</li>
+      <li>Special challenge options</li>
+    </ul>
+
+    <div class="buttons">
+      <button onclick="handleClick('Tokens have been reset.')">Reset Tokens</button>
+      <button onclick="handleClick('Override activated.')">Override</button>
+      <button onclick="handleClick('Challenge awarded!')">Award Challenge</button>
     </div>
+
+    <div class="output" id="outputMessage"></div>
   </div>
+
+  <script>
+    function handleClick(message) {
+      const output = document.getElementById('outputMessage');
+      output.textContent = message;
+      setTimeout(() => {
+        output.textContent = '';
+      }, 2500);
+    }
+  </script>
+
 </body>
 </html>
-
